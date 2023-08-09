@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/pages/todo-page.css">
+    <link rel="stylesheet" href="./css/pages/calendar-page.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <button class="btn sidebar-toggle-button" onclick="sidebarToggleButtonOnClickHandler();">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <h1 class="sidebar-title">네비게이션</h1>
+            <ul class="sidebar-item-list">
+                <li class="sidebar-item sidebar-item-todo" onclick="sidebarItemTodoOnClickHandler();"><i class="fa-solid fa-person-digging"></i>할 일</li>
+                <li class="sidebar-item sidebar-item-calendar" onclick="sidebarItemCalendarOnClickHandler();"><i class="fa-regular fa-calendar"></i>캘린더</li>
+            </ul>
+        </aside>
+        <main class="page-container">
+            <div class="todo-page">
+                <header class="todo-page-header">
+                    <h3>할 일 추가</h3>
+                    <input type="text" class="text-input w-f">
+                </header>
+                <ul class="todo-item-list">
+                    <li class="todo-item">
+                        <input type="checkbox">
+                        <span>할 일 예시</span>
+                        <span>2023-01-01</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="calendar-page invisible">
+                <input type="datetime-local">
+            </div>
+        </main>
+    </div>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/event.js"></script>
+    <script src="./js/page.js"></script>
+</body>
+</html>
