@@ -74,4 +74,9 @@ class PagePainter{
             `;
         });
     }
+
+    clearTodoContentInput() {
+        const todoContentInputObj = document.querySelector(".todo-content-input");
+        todoContentInputObj.value = '';
+    }
 }

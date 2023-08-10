@@ -20,5 +20,7 @@ const todoContentInputOnKeyDownHandler = (event) => {
     if(event.keyCode === 13) {
         TodoManager.getInstance().addTodoWithTodoContentInput();
         PagePainter.getInstance().paintTodoList();
+        PagePainter.getInstance().clearTodoContentInput();
+
     }
 };
