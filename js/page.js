@@ -67,9 +67,17 @@ class PagePainter{
         todoList.forEach((todo) => {
             todoItemListObject.innerHTML += `
                 <li class="todo-item todo-item-${todo.id}">
-                    <input type="checkbox" ${todo.finishedDateTime ? "checked" : ""}>
-                    <span>${todo.content}</span>
-                    <span>${todo.creationDateTime}</span>
+                    <div class="todo-item-left">
+                        <input type="checkbox" ${todo.finishedDateTime ? "checked" : ""}>
+                        <span>${todo.content}</span>
+                    </div>
+                    <div class="todo-item-right">
+                        <span>${todo.creationDateTime}</span>
+                        <div class="todo-item-buttons">
+                            <button class="btn" onclick="todoItemModifyButtonOnClickHandler(${todo.id});">수정</button>
+                            <button class="btn" onclick="todoItemDeleteButtonOnClickHandler(${todo.id});">삭제</button>
+                        </div>
+                    </div>
                 </li>
             `;
         });

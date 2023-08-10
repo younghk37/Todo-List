@@ -21,6 +21,14 @@ const todoContentInputOnKeyDownHandler = (event) => {
         TodoManager.getInstance().addTodoWithTodoContentInput();
         PagePainter.getInstance().paintTodoList();
         PagePainter.getInstance().clearTodoContentInput();
-
     }
+};
+
+const todoItemModifyButtonOnClickHandler = (todoId) => {
+
+};
+
+const todoItemDeleteButtonOnClickHandler = (todoId) => {
+    TodoManager.getInstance().deleteTodoWithId(todoId);
+    PagePainter.getInstance().paintTodoList();
 };

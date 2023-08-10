@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .todo-page-header {
@@ -19,4 +20,27 @@
 
 .todo-page-header > * {
     margin-bottom: 15px;
+}
+
+.todo-item-list {
+    width: 80%;
+    overflow-y: scroll;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.todo-item-right {
+    text-align: center;
+    min-width: 100px;
+}
+
+.todo-item-right * {
+    margin-top: 5px;
 }

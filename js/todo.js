@@ -33,6 +33,26 @@ class TodoManager {
         this.#saveTodoListToLocalStorage();
     }
 
+    deleteTodoWithId(id) {
+        this.#findTodoWithId(id);
+        this.#localTodoList = this.#localTodoList.filter((todo) => {
+            return todo.id !== id;
+        });
+        this.#saveTodoListToLocalStorage();
+    }
+
+    #findTodoWithId(id) {
+        const result = this.#localTodoList.filter(todo => {
+            return todo.id === id;
+        });
+
+        if(result.length === 0) {
+            throw Error("id doesn't exists");
+        }
+        
+        return result[0];
+    }
+
     #saveTodoListToLocalStorage() {
         localStorage.setItem("todolist", JSON.stringify(this.#localTodoList));
     }
