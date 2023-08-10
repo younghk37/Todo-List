@@ -48,3 +48,30 @@ class PageChanger {
         throw Error("page doesn't exists");
     }
 }
+
+class PagePainter{
+    static #instance = null;
+
+    static getInstance() {
+        if(this.#instance === null) {
+            this.#instance = new PagePainter();
+        }
+        return this.#instance;
+    }
+
+    paintTodoList() {
+        const todoList = TodoManager.getInstance().getTodoList();
+        const todoItemListObject = document.querySelector(".todo-item-list");
+        todoItemListObject.innerHTML = '';
+        
+        todoList.forEach((todo) => {
+            todoItemListObject.innerHTML += `
+                <li class="todo-item todo-item-${todo.id}">
+                    <input type="checkbox" ${todo.finishedDateTime ? "checked" : ""}>
+                    <span>${todo.content}</span>
+                    <span>${todo.creationDateTime}</span>
+                </li>
+            `;
+        });
+    }
+}

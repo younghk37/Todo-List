@@ -33,14 +33,10 @@
             <div class="todo-page">
                 <header class="todo-page-header">
                     <h3>할 일 추가</h3>
-                    <input type="text" class="text-input w-f">
+                    <input type="text" class="text-input w-f todo-content-input" onkeydown="todoContentInputOnKeyDownHandler(event)">
                 </header>
                 <ul class="todo-item-list">
-                    <li class="todo-item">
-                        <input type="checkbox">
-                        <span>할 일 예시</span>
-                        <span>2023-01-01</span>
-                    </li>
+                    
                 </ul>
             </div>
             <div class="calendar-page invisible">
@@ -48,8 +44,11 @@
             </div>
         </main>
     </div>
+    <script src="./js/utils/calendarUtil.js"></script>
+    <script src="./js/utils/timeUtil.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/page.js"></script>
+    <script src="./js/todo.js"></script>
 </body>
 </html>
