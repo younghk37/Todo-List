@@ -33,15 +33,33 @@ class TodoManager {
         this.#saveTodoListToLocalStorage();
     }
 
+    updateTodoWithModalContentInput(todoId) {
+        const modalContentInputObj = document.querySelector(".modal-content-input");
+        const oldTodo = this.findTodoWithId(todoId);
+
+        const newTodo = {
+            ...oldTodo,
+            content: modalContentInputObj.value
+        };
+
+        this.#localTodoList.forEach((todo, index) => {
+            if(todo.id === newTodo.id) {
+                this.#localTodoList[index] = newTodo;
+            }
+        });
+
+        this.#saveTodoListToLocalStorage();
+    }
+
     deleteTodoWithId(id) {
-        this.#findTodoWithId(id);
+        this.findTodoWithId(id);
         this.#localTodoList = this.#localTodoList.filter((todo) => {
             return todo.id !== id;
         });
         this.#saveTodoListToLocalStorage();
     }
 
-    #findTodoWithId(id) {
+    findTodoWithId(id) {
         const result = this.#localTodoList.filter(todo => {
             return todo.id === id;
         });

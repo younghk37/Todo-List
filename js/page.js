@@ -72,7 +72,8 @@ class PagePainter{
                         <span>${todo.content}</span>
                     </div>
                     <div class="todo-item-right">
-                        <span>${todo.creationDateTime}</span>
+                        <div>${todo.creationDateTime.substring(0,10)}</div>
+                        <div>${todo.creationDateTime.substring(11)}</div>
                         <div class="todo-item-buttons">
                             <button class="btn" onclick="todoItemModifyButtonOnClickHandler(${todo.id});">수정</button>
                             <button class="btn" onclick="todoItemDeleteButtonOnClickHandler(${todo.id});">삭제</button>

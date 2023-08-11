@@ -25,10 +25,29 @@ const todoContentInputOnKeyDownHandler = (event) => {
 };
 
 const todoItemModifyButtonOnClickHandler = (todoId) => {
-
+    Modal.getInstance().openModal(todoId);
+    Modal.getInstance().getFocus();
 };
 
 const todoItemDeleteButtonOnClickHandler = (todoId) => {
     TodoManager.getInstance().deleteTodoWithId(todoId);
     PagePainter.getInstance().paintTodoList();
+};
+
+const modalContentInputOnKeyDownHandler = (todoId, event) => {
+    if(event.keyCode === 13) {
+        TodoManager.getInstance().updateTodoWithModalContentInput(todoId);
+        PagePainter.getInstance().paintTodoList();
+        Modal.getInstance().closeModal();
+    }
+}
+
+const modalFooterApplyButtonOnClickHandler = (todoId) => {
+    TodoManager.getInstance().updateTodoWithModalContentInput(todoId);
+    PagePainter.getInstance().paintTodoList();
+    Modal.getInstance().closeModal();
+};
+
+const modalFooterCloseButtonOnClickHandler = () => {
+    Modal.getInstance().closeModal();
 };

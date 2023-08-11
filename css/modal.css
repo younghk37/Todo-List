@@ -1,0 +1,38 @@
+.modal {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #eeee;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    width: 300px;
+    background-color: #b39e9e3f;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #a89b9b;
+    padding-bottom: 15px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-main {
+    margin-bottom: 15px;
+}
