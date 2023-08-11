@@ -1,4 +1,5 @@
 .sidebar {
+    z-index: 1;
     position: absolute;
     transition: left 0.3s ease;
     top: 0px;
