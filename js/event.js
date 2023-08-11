@@ -24,6 +24,10 @@ const todoContentInputOnKeyDownHandler = (event) => {
     }
 };
 
+const todoItemCheckBoxOnChangeHandler = (todoId) => {
+    TodoManager.getInstance().toggleFinished(todoId);
+};
+
 const todoItemModifyButtonOnClickHandler = (todoId) => {
     Modal.getInstance().openModal(todoId);
     Modal.getInstance().getFocus();

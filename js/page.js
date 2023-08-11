@@ -68,7 +68,7 @@ class PagePainter{
             todoItemListObject.innerHTML += `
                 <li class="todo-item todo-item-${todo.id}">
                     <div class="todo-item-left">
-                        <input type="checkbox" ${todo.finishedDateTime ? "checked" : ""}>
+                        <input type="checkbox" ${todo.finishedDateTime ? "checked" : ""} onchange="todoItemCheckBoxOnChangeHandler(${todo.id});">
                         <span>${todo.content}</span>
                     </div>
                     <div class="todo-item-right">

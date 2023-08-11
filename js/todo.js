@@ -51,6 +51,17 @@ class TodoManager {
         this.#saveTodoListToLocalStorage();
     }
 
+    toggleFinished(targetId) {
+        this.#localTodoList.forEach((todo, index) => {
+            if(todo.id === targetId) {
+                const newFinished = this.#localTodoList[index].finishedDateTime ? null : TimeUtil.convertDateToStringWithSeparator(new Date());
+                this.#localTodoList[index].finishedDateTime = newFinished;
+            }
+        });
+
+        this.#saveTodoListToLocalStorage();
+    }
+
     deleteTodoWithId(id) {
         this.findTodoWithId(id);
         this.#localTodoList = this.#localTodoList.filter((todo) => {
