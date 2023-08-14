@@ -24,6 +24,10 @@ const todoContentInputOnKeyDownHandler = (event) => {
     }
 };
 
+const todoFilterConditionOnClickHandler = (event) => {
+    PagePainter.getInstance().paintTodoList();
+}
+
 const todoItemCheckBoxOnChangeHandler = (todoId) => {
     TodoManager.getInstance().toggleFinished(todoId);
 };

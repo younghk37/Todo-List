@@ -60,7 +60,9 @@ class PagePainter{
     }
 
     paintTodoList() {
-        const todoList = TodoManager.getInstance().getTodoList();
+        let todoList = TodoManager.getInstance().getTodoList();
+        todoList = this.#filterTodoWithTodoFilterCondition(todoList);
+
         const todoItemListObject = document.querySelector(".todo-item-list");
         todoItemListObject.innerHTML = '';
         
@@ -82,6 +84,40 @@ class PagePainter{
                 </li>
             `;
         });
+    }
+
+    #filterTodoWithTodoFilterCondition(todoList) {
+        const radioButtons = document.getElementsByName("todo-filter-condition");
+        let todoFilterCondition = null;
+
+        for(const radioButton of radioButtons) {
+            if(radioButton.checked) {
+                todoFilterCondition = radioButton.value;
+                break;
+            }
+        }
+
+        console.log(todoFilterCondition);
+        console.log('이다');
+        
+        switch(todoFilterCondition) {
+            case "all":
+                break;
+            case "remain":
+                todoList = todoList.filter((todo) => {
+                    return todo.finishedDateTime === null;
+                });
+                break;
+            case "done":
+                todoList = todoList.filter((todo) => {
+                    return todo.finishedDateTime !== null;
+                });
+                break;
+        }
+
+        console.log(todoList);
+
+        return todoList;
     }
 
     clearTodoContentInput() {

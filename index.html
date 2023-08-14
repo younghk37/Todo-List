@@ -36,6 +36,14 @@
                     <h3>할 일 추가</h3>
                     <input type="text" class="text-input w-f todo-content-input" onkeydown="todoContentInputOnKeyDownHandler(event)">
                 </header>
+                <div class="todo-filter-condition-list">
+                    <label for="todo-filter-condition-all">전체 조회</label>
+                    <input type="radio" name="todo-filter-condition" id="todo-filter-condition-all" value="all" checked onclick="todoFilterConditionOnClickHandler();">
+                    <label for="todo-filter-condition-remain">해야할 일</label>
+                    <input type="radio" name="todo-filter-condition" id="todo-filter-condition-remain" value="remain" onclick="todoFilterConditionOnClickHandler();">
+                    <label for="todo-filter-condition-done">끝난 일</label>
+                    <input type="radio" name="todo-filter-condition" id="todo-filter-condition-done" value="done" onclick="todoFilterConditionOnClickHandler();">
+                </div>
                 <ul class="todo-item-list">
                     
                 </ul>
